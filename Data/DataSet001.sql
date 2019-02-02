@@ -1,0 +1,15 @@
+/*	Default Employee	*/
+
+
+INSERT INTO EMPLOYEE(POSID,NAME,PHONE,EMAIL,DOB,SHIFTDURATION,DATEHIRED)
+VALUES(1,'None','00000','employee@removed',null,0,0-0-0000)
+
+
+/*	Positions	*/
+
+
+INSERT INTO POSITION(POSNAME,SALARY,BONUS,BONUSCYCLEDAYS)
+VALUES('Fired',0,0,0),
+	('Intern',0,100,30),
+	('Part-Time',800,200,90),
+	('Full-Time',1200,400,90)

@@ -238,7 +238,11 @@ AS
 		BEGIN
 	
 			UPDATE CLIENTACCOUNT
-			SET EID = 1
+			SET EID = 15
+			WHERE EID = @EID
+
+			UPDATE LOG
+			SET EID = 15
 			WHERE EID = @EID
 
 			INSERT INTO admin.LOG(EMP,TYPE,DETAILS,DATE)
@@ -248,8 +252,21 @@ AS
 	CLOSE CA
 	DEALLOCATE CA
 
+/*	Prevent deletion of default employee	*/
 
+CREATE TRIGGER fk_EMLOYEE_NoDelete_Emp0
+ON EMPLOYEE
+AFTER DELETE
+AS
+BEGIN
+	DECLARE @EID int
+	SET @EID = (SELECT EID from deleted)
 
+	IF @EID = 15
+		BEGIN
+		ROLLBACK
+		END
+END
 
 /*	AID in Debit, Credit, Saving, Retirement acocunts 	*/
 

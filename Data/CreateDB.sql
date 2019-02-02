@@ -147,7 +147,7 @@ create table LOAN (
    PID12                int   IDENTITY(1,1)  not null,
    CID                  int                  not null,
    DATETAKEN            datetime             not null,
-   ATTRIBUTE_24         int                  not null,
+   NEXTPAYMENT         	int                  not null,
    SPLITINTO            int                  null,
    CYCLEDAYS            int                  null,
    TOTALPAYMENTS        int                  null,

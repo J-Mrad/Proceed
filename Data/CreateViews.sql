@@ -9,7 +9,7 @@ FROM EMPLOYEE JOIN POSITION
 ON EMPLOYEE.POSID = POSITION.POSID
 
 /*==============================================================*/
-/* 	Views to get all data possible about an accou           */
+/* 	Views to get all data possible about an accout          */
 /*			of any type			        */
 /*==============================================================*/
 
