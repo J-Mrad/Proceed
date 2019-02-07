@@ -49,7 +49,7 @@ GRANT DELETE ON POSITION TO posMng
 ALTER ROLE empMng ADD MEMBER employeeManager
 ALTER ROLE posMng ADD MEMBER employeeManager
 
-/*			Loan Manager 				/*
+/*			Loan Manager 				*/
 
 USE [master]
 GO
@@ -72,7 +72,7 @@ ALTER ROLE loanMng ADD MEMBER LoanManager
 
 
 
-/*			Regional Manager 			/*
+/*			Regional Manager 			*/
 
 
 USE [master]

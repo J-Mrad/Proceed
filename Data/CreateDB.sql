@@ -170,7 +170,7 @@ go
 /*==============================================================*/
 create table LOG (
    LOGID                int   IDENTITY(1,1)  not null,
-   EID                  int                  null,
+   EMP                  int                  null,
    TYPE                 varchar(32)          null,
    DETAILS              varchar(256)         null,
    DATE                 datetime             null,

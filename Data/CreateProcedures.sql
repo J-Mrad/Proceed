@@ -81,6 +81,7 @@ BEGIN
 	CREATE USER [@Name] FOR LOGIN [@Name] WITH DEFAULT_SCHEMA=[guest];
 END
 
+
 /*	Transaction beteen two debit accounts		*/
 
 CREATE PROCEDURE Cash_Transaction_Debit
