@@ -37,9 +37,9 @@ create table ACCOUNTLEVEL (
    MINBALANCE           int                  not null,
    MAXDUE               int                  not null,
    MAXWITHDRAW          int                  not null,
-   INTERESTCREDIT       int                  null,
+   INTERESTDEBIT        int                  null,
    INTERESTGAIN         int                  null,
-   TAXDEBIT             int                  null,
+   TAXCREDIT            int                  null,
    constraint PK_ACCOUNTLEVEL primary key nonclustered (LEVEL)
 )
 go
