@@ -37,12 +37,13 @@ create table ACCOUNTLEVEL (
    MINBALANCE           int                  not null,
    MAXDUE               int                  not null,
    MAXWITHDRAW          int                  not null,
-   INTERESTCREDIT       int                  null,
+   INTERESTDEBIT       int                  null,
    INTERESTGAIN         int                  null,
-   TAXDEBIT             int                  null,
+   TAXCREDIT             int                  null,
    constraint PK_ACCOUNTLEVEL primary key nonclustered (LEVEL)
 )
 go
+
 
 /*==============================================================*/
 /* Table: CLIENT                                                */
@@ -267,7 +268,7 @@ alter table LOAN
 go
 
 alter table LOG
-   add constraint FK_LOG_REFERENCE_EMPLOYEE foreign key (EID)
+   add constraint FK_LOG_REFERENCE_EMPLOYEE foreign key (EMP)
       references EMPLOYEE (EID)
 go
 
