@@ -267,7 +267,7 @@ alter table LOAN
 go
 
 alter table LOG
-   add constraint FK_LOG_REFERENCE_EMPLOYEE foreign key (EID)
+   add constraint FK_LOG_REFERENCE_EMPLOYEE foreign key (EMP)
       references EMPLOYEE (EID)
 go
 
