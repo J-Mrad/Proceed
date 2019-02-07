@@ -8,6 +8,8 @@ BEGIN
 	TO DISK=@path
 
 END
+GO
+
 
 CREATE PROCEDURE Restore_DB
 @path varchar(50)
@@ -27,7 +29,7 @@ BEGIN
 		MOVE 'Proceed_dat' TO @PathA,
 		MOVE 'Proceed_log' TO @PathB
 END
-
+GO
 
 /*	Procedure for admins to clear the logs	*/
 
@@ -53,7 +55,7 @@ BEGIN
 	EXEC(@SQL);
 
 END
-
+GO
 
 /*	Creating an account and login for a new employee	*/
 
@@ -80,7 +82,7 @@ BEGIN
 	EXEC(@SQL);
 	CREATE USER [@Name] FOR LOGIN [@Name] WITH DEFAULT_SCHEMA=[guest];
 END
-
+GO
 
 /*	Transaction beteen two debit accounts		*/
 
@@ -110,3 +112,4 @@ BEGIN TRANSACTION
 	UPDATE DEBITACCOUNT SET BALANCE = @NewA WHERE PID10 = @A;
 	UPDATE DEBITACCOUNT SET BALANCE = @NewB WHERE PID10 = @B;
 COMMIT
+GO
