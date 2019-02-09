@@ -8,12 +8,14 @@ BEGIN
 	TO DISK=@path
 
 END
+GO
+
 
 CREATE PROCEDURE Restore_DB
 @path varchar(50)
 AS
 BEGIN
-	
+
 	DECLARE @pathA varchar(50);
 	DECLARE @pathB varchar(50);
 
@@ -29,7 +31,6 @@ BEGIN
 END
 GO
 
-
 /*	Procedure for admins to clear the logs	*/
 
 CREATE PROCEDURE Clear_Log
@@ -37,11 +38,11 @@ AS
 BEGIN
 
 	DROP TRIGGER noDelete_LOG
-	
+
 	DELETE FROM LOG
 
 	DECLARE @SQL varchar(MAX);
-	SET @SQL = 
+	SET @SQL =
 	'CREATE TRIGGER noDelete_LOG
 	ON LOG
 	INSTEAD OF DELETE
@@ -55,7 +56,6 @@ BEGIN
 
 END
 GO
-
 
 /*	Creating an account and login for a new employee	*/
 
@@ -88,7 +88,6 @@ BEGIN
 END
 GO
 
-
 /*	Transaction beteen two debit accounts		*/
 
 CREATE PROCEDURE Cash_Transaction_Debit
@@ -113,7 +112,7 @@ BEGIN TRANSACTION
 	BEGIN
 		ROLLBACK
 	END
-	
+
 	UPDATE DEBITACCOUNT SET BALANCE = @NewA WHERE PID10 = @A;
 	UPDATE DEBITACCOUNT SET BALANCE = @NewB WHERE PID10 = @B;
 COMMIT
