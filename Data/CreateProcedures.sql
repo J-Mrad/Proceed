@@ -76,11 +76,15 @@ BEGIN
 	DECLARE @Pass varchar(MAX);
 	SET @Pass = SUBSTRING(@Email,1,3) + SUBSTRING(@Name,1,3)
 
+
 	DECLARE @SQL varchar(MAX);
+	DECLARE @SQL2 varchar(MAX);
+
 	SET @SQL = 'CREATE LOGIN [' + @Name + '] WITH PASSWORD=N''' + @Pass + ''', DEFAULT_DATABASE=[Proceed],
 	 CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF';
 	EXEC(@SQL);
-	CREATE USER [@Name] FOR LOGIN [@Name] WITH DEFAULT_SCHEMA=[guest];
+	SET @SQL2 = 'CREATE USER ['+ @Name+ '] FOR LOGIN ['+@Name+'] WITH DEFAULT_SCHEMA=[guest]';
+	EXEC(@SQL2);
 END
 GO
 
