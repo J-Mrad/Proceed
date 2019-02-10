@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed6826" height="720.0" stroke="#b89c63" strokeType="INSIDE" width="85.0" />
+      <StackPane id="LoginButton" layoutY="-1.0" prefHeight="185.0" prefWidth="1284.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed6826" height="185.0" stroke="#b89c63" strokeType="INSIDE" width="1284.0" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Regional Manager" wrappingWidth="1281.0" StackPane.alignment="CENTER">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <ImageView id="pr1ImageView" fx:id="loginLogo" fitHeight="85.0" fitWidth="184.0" layoutX="-50.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@Proceed.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="122.0" layoutY="211.0" prefHeight="481.0" prefWidth="1125.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="141.0" text="Level" />
+                  <Region prefHeight="54.0" prefWidth="151.0" />
+                  <ComboBox id="account_level" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="149.0" text="Min Balance" HBox.hgrow="ALWAYS" />
+                  <Region prefHeight="200.0" prefWidth="143.0" />
+                  <TextField id="min_balance" prefHeight="26.0" prefWidth="650.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="158.0" text="Max Due" />
+                  <Region prefHeight="72.0" prefWidth="134.0" />
+                  <TextField id="max_due" prefWidth="650.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="155.0" text="Max Withdraw" />
+                  <Region prefHeight="72.0" prefWidth="137.0" />
+                  <TextField id="max_withdraw" prefWidth="650.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="168.0" text="Interest Debit" />
+                  <Region prefHeight="62.0" prefWidth="120.0" />
+                  <TextField id="interest_debit" prefHeight="26.0" prefWidth="650.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="159.0" text="Interest Gain" />
+                  <Region minWidth="0.0" prefHeight="73.0" prefWidth="129.0" />
+                  <TextField id="interest_gain" prefWidth="650.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="778.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="149.0" text="Tax Credit" />
+                  <Region prefHeight="73.0" prefWidth="139.0" />
+                  <TextField id="tax_credit" prefHeight="26.0" prefWidth="650.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="1115.0">
+               <children>
+                  <Region prefHeight="61.0" prefWidth="467.0" />
+                  <Button id="update_button" mnemonicParsing="false" prefHeight="53.0" prefWidth="300.0" text="Update Level">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView id="log_out" fitHeight="150.0" fitWidth="200.0" layoutX="-62.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@LogOut.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

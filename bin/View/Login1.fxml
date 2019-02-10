@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView id="pr1ImageView" fx:id="loginLogo" fitHeight="85.0" fitWidth="242.0" layoutX="548.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Proceed.png" />
+         </image></ImageView>
+      <StackPane id="LoginText" layoutX="338.0" layoutY="477.0" prefHeight="0.0" prefWidth="605.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffaa00" height="49.0" stroke="#b89c63" strokeType="INSIDE" width="604.0" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="LOGIN" wrappingWidth="605.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <VBox layoutX="461.0" layoutY="306.0" prefHeight="48.0" prefWidth="358.0" spacing="50.0">
+         <children>
+            <TextField id="Username" promptText="Username" />
+            <TextField id="Password" promptText="Password" />
+         </children>
+      </VBox>
+      <Text id="RegisterButton" fill="#0f6bff9e" layoutX="527.0" layoutY="554.0" stroke="#0f6bff" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an acoount yet? Make one here" />
+   </children>
+</AnchorPane>

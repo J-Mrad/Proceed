@@ -269,7 +269,7 @@ BEGIN
 	DECLARE @EID int
 	SET @EID = (SELECT EID from deleted)
 
-	IF @EID = 15
+	IF @EID = 1
 		BEGIN
 		ROLLBACK
 		END

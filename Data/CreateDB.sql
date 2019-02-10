@@ -171,7 +171,7 @@ go
 /*==============================================================*/
 create table LOG (
    LOGID                int   IDENTITY(1,1)  not null,
-   EMP                  int                  null,
+   EMP                  varchar(512)         null,
    TYPE                 varchar(32)          null,
    DETAILS              varchar(256)         null,
    DATE                 datetime             null,
@@ -266,12 +266,12 @@ alter table LOAN
    add constraint FK_LOAN_TAKES_CLIENT foreign key (CID)
       references CLIENT (CID)
 go
-
+/*
 alter table LOG
    add constraint FK_LOG_REFERENCE_EMPLOYEE foreign key (EMP)
       references EMPLOYEE (EID)
 go
-
+*/
 alter table RETIREMENTACCOUNT
    add constraint FK_RETIREME_INHERITAN_ACCOUNT foreign key (PID10)
       references ACCOUNT (PID10)

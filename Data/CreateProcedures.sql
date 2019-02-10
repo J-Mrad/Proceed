@@ -62,7 +62,7 @@ GO
 CREATE PROCEDURE AddEmployee
 @PosID INTEGER,
 @Name varchar(MAX),
-@Phone INTEGER,
+@Phone varchar(MAX),
 @Email varchar(MAX),
 @DOB varchar(MAX),
 @Shift INTEGER,
@@ -70,22 +70,27 @@ CREATE PROCEDURE AddEmployee
 AS
 BEGIN
 
-	INSERT INTO EMPLOYEE(POSID,NAME,PHONE,EMAIL,DOB,SHIFTDURATION,DATEHIRED)
-	VALUES(@PosID,@Name,@Phone,@Email,@DOB,@Shift,@Hired);
+    INSERT INTO EMPLOYEE(POSID,NAME,PHONE,EMAIL,DOB,SHIFTDURATION,DATEHIRED)
+    VALUES(@PosID,@Name,@Phone,@Email,@DOB,@Shift,@Hired);
 
-	DECLARE @Pass varchar(MAX);
-	SET @Pass = SUBSTRING(@Email,1,3) + SUBSTRING(@Name,1,3)
+    DECLARE @Pass varchar(MAX);
+    SET @Pass = SUBSTRING(@Email,1,3) + SUBSTRING(@Name,1,3)
 
-	DECLARE @SQL varchar(MAX);
-	SET @SQL = 'CREATE LOGIN [' + @Name + '] WITH PASSWORD=N''' + @Pass + ''', DEFAULT_DATABASE=[Proceed],
-	 CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF';
-	EXEC(@SQL);
-	CREATE USER [@Name] FOR LOGIN [@Name] WITH DEFAULT_SCHEMA=[guest];
+
+    DECLARE @SQL varchar(MAX);
+    DECLARE @ALTER varchar(MAX);
+    DECLARE @SQL2 varchar(MAX);
+
+    SET @SQL = 'CREATE LOGIN [' + @Name + '] WITH PASSWORD=N''' + @Pass + ''', DEFAULT_DATABASE=[Proceed],
+     CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF';
+    EXEC(@SQL);
+    SET @SQL2 = 'CREATE USER ['+ @Name+ '] FOR LOGIN ['+@Name+'] WITH DEFAULT_SCHEMA=[guest]';
+    EXEC(@SQL2);
+
 END
 GO
 
 /*	Transaction beteen two debit accounts		*/
-
 CREATE PROCEDURE Cash_Transaction_Debit
 @A INTEGER,
 @B INTEGER,
@@ -102,7 +107,7 @@ BEGIN TRANSACTION
 	SET @OldB = (SELECT BALANCE FROM DEBITACCOUNT WHERE PID10 = @B);
 
 	SET @NewA = @OldA - @Value;
-	SET @NewA = @OldB + @Value;
+	SET @NewB = @OldB + @Value;
 
 	IF(@NewA < 0)
 	BEGIN

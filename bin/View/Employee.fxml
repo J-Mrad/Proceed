@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed6826" height="720.0" stroke="#b89c63" strokeType="INSIDE" width="85.0" />
+      <StackPane id="LoginButton" layoutY="-1.0" prefHeight="185.0" prefWidth="1284.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed6826" height="185.0" stroke="#b89c63" strokeType="INSIDE" width="1284.0" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Employee" wrappingWidth="1281.0" StackPane.alignment="CENTER">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <ImageView id="pr1ImageView" fx:id="loginLogo" fitHeight="85.0" fitWidth="184.0" layoutX="-50.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@Proceed.png" />
+         </image>
+      </ImageView>
+      <ImageView id="employee_log_out" fitHeight="150.0" fitWidth="200.0" layoutX="-62.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@LogOut.png" />
+         </image>
+      </ImageView>
+      <ImageView id="employee_add_client" fitHeight="150.0" fitWidth="200.0" layoutX="-62.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@AddClient.png" />
+         </image>
+      </ImageView>
+      <ListView id="employee_client_list_view" layoutX="958.0" layoutY="203.0" prefHeight="498.0" prefWidth="309.0" />
+      <VBox layoutX="132.0" layoutY="221.0" prefHeight="434.0" prefWidth="778.0">
+         <children>
+            <VBox prefHeight="110.0" prefWidth="778.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="22.0" prefWidth="778.0">
+                     <children>
+                        <Label id="employee_client_label" prefHeight="18.0" prefWidth="309.0" text="Client: " />
+                        <Label id="employee_client_name" prefHeight="18.0" prefWidth="309.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="200.0" text="Account Type:" />
+                        <ComboBox id="employee_account_type" prefWidth="150.0" />
+                        <Region prefHeight="62.0" prefWidth="74.0" />
+                        <ComboBox id="employee_account_level" prefWidth="150.0" />
+                        <Region prefHeight="62.0" prefWidth="74.0" />
+                        <Button id="employee_add_new_account_button" mnemonicParsing="false" prefHeight="32.0" prefWidth="133.0" text="Add New Account" />
+                        <Region prefHeight="62.0" prefWidth="81.0" HBox.hgrow="ALWAYS" />
+                        <ImageView id="x_view" fitHeight="31.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@download.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox id="from_box" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="163.0" text="Tranfer From: " HBox.hgrow="ALWAYS" />
+                  <Region prefHeight="87.0" prefWidth="113.0" />
+                  <TextField id="employee_tranfer_from" prefHeight="26.0" prefWidth="616.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox id="to_box" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="131.0" text="Tranfer To" />
+                  <Region prefHeight="87.0" prefWidth="94.0" />
+                  <TextField id="employee_transfer_to" prefHeight="26.0" prefWidth="592.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="123.0" text="Quantity" />
+                  <Region prefHeight="87.0" prefWidth="99.0" />
+                  <TextField id="employee_quantity" prefHeight="26.0" prefWidth="590.0" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="200.0" text="From Balance:" />
+                  <ComboBox id="empoyee_from_account" prefHeight="28.0" prefWidth="232.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="200.0" text="To Balance:" />
+                  <ComboBox id="empoyee_to_account" prefHeight="28.0" prefWidth="232.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ed6826" height="9.0" layoutX="104.0" layoutY="285.0" stroke="#ed6826" strokeType="INSIDE" width="830.0" />
+      <Button id="employee_transfer" layoutX="463.0" layoutY="643.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="224.0" text="Transfer" />
+   </children>
+</AnchorPane>
